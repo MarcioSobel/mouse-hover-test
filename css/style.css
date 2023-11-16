@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+body {
+    background-color: black;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    margin: 0px;
+
+    color: white;
+}
+
+a, a:active, a:hover, a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
+#tail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    z-index: 100;
+    pointer-events: none;
+    opacity: 0;
+
+    height: 20px;
+    width: 20px;
+    background-color: white;
+    border-radius: 100%;
+
+    mix-blend-mode: normal;
+
+    transition: opacity 500ms ease;
+}
+
+#tail:not([data-type=""]) > #tail-icon {
+    opacity: 1;
+}
+
+#tail-icon {
+    color: black;
+    font-size: 0.5rem;
+    opacity: 0;
+
+    transition: opacity 200ms ease;
+}
+
+body:hover > #tail {
+    opacity: 1;
+}
+
+.title {
+    font-family: Nunito;
+    font-size: 9vmin;
+    font-weight: bold;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 3vmin;
+
+    user-select: none;
+}
+
+.images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    gap: 4vmin;
+}
+
+.image {
+    width: 35vmin;
+    height: 49vmin;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.5;
+    border-radius: 0.75vmin;
+
+    transition: transform 300ms ease, opacity 300ms ease, border-radius 200ms ease;
+
+    &:hover {
+        transform: scale(110%);
+        opacity: 1;
+        border-radius: 2vmin;
+    }
+}
+
+.source {
+    position: absolute;
+    bottom: 8vmin;
+    left: 50%;
+    transform: translateX(-50%);
+
+    font-family: Nunito;
+    font-size: 3.2vmin;
+    text-align: center;
+
+    width: 15vmin;
+    height: 4.5vmin;
+
+    padding-inline: 2vmin;
+    padding-block: 1vmin;
+    border: 0.35vmin solid white;
+    border-radius: 0.75vmin;
+
+    transition: transform 500ms ease, border-radius 400ms ease;
+    &:hover {
+        transform: translateX(-50%) scale(115%);
+        border-radius: 2vmin;
+    }
+}
+
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 5vmin;
+
+    position: absolute;
+    top: 18vmin;
+    left: 50%;
+    transform: translateX(-50%);
+
+    font-family: Nunito;
+    font-size: 2vmin;
+}
